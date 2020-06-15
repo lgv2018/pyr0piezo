@@ -33,7 +33,7 @@ extern int TRG_DUR;
 #define HYST_ADDRESS 20
 extern int Hyst; // Hysteresis value for ADC measurements
 
-#define LOGIC_DEFAULT 1
+#define LOGIC_DEFAULT 0
 #define LOGIC_ADDRESS 32
 extern int LOGIC; // Trigger logic scheme, Active LOW is default
 
@@ -53,6 +53,10 @@ extern long voltMeterConstant; // For fine tuning input voltage sense
 
 #define I2C_SLAVE_ADDRESS 24
 extern uint8_t pP_i2c_address;
+
+#ifndef PP_VERSION
+    #define PP_VERSION "2.3.1"
+#endif // PP_VERSION fallback if python script fails
 
 void eraseEEPROM();
 void setDefaultConfig();
